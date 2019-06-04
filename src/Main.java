@@ -12,10 +12,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner inputScanner = new Scanner(System.in);
-		Board board = new Board();
-		Player p = new Player();
+		Board_aux board = new Board_aux();
+		Board p = new Board();
 		
-		p.resetGameArray();
+		//p.resetGameArray();
 		p.printGameArray();
 
 		while(p.winConditionHorizontal() != 1 || p.winConditionHorizontal() != 2) {
@@ -35,7 +35,11 @@ public class Main {
 			System.out.println("H WIN COND: "+ p.winConditionHorizontal());
 			System.out.println("V WIN COND: "+ p.winConditionVertical());
 			System.out.println();
+			if(p.winConditionHorizontal()==1 || p.winConditionVertical()==1) {
+				break;
+			}
 		}
+		System.out.println("El juego termino");
 		System.out.println(p.winConditionHorizontal());		
 
 	
